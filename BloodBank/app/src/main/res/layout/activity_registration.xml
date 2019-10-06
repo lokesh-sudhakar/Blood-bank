@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrationActivity">
+
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/spacing_16dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.bloodbank.utilities.RoundedImageView
+                android:id="@+id/profilePic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/spacing_16dp"
+                app:srcCompat="@drawable/man"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="@string/enter_name"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_margin="@dimen/spacing_16dp"
+            android:background="@null"
+            android:textSize="15sp"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:drawableStart="@drawable/bb_profile_green"
+            app:layout_constraintTop_toBottomOf="@id/profilePic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:drawablePadding="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_lock_outline_dark"
+                app:layout_constraintTop_toBottomOf="@id/email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/reEnterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/confirm_password"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:drawablePadding="10dp"
+                android:inputType="textPassword"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_lock_filled_dark"
+                app:layout_constraintTop_toBottomOf="@id/password"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/phone_number"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_phone_dark"
+                app:layout_constraintTop_toBottomOf="@id/reEnterPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <RadioGroup
+                android:id="@+id/radioGender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/phoneNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/radio_male"
+                    android:paddingEnd="@dimen/spacing_16dp"
+                    android:buttonTint="@color/colorPrimaryDark"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/spacing_16dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginStart="@dimen/spacing_16dp"
+                    android:buttonTint="@color/colorPrimaryDark"
+                    android:text="@string/radio_female" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/birthDate"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/birth_date"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_cake_dark"
+                app:layout_constraintTop_toBottomOf="@id/radioGender"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Your location"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_location_halo"
+                app:layout_constraintTop_toBottomOf="@id/birthDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/district"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/district"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_location_filled"
+                app:layout_constraintTop_toBottomOf="@id/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/city"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:drawableStart="@drawable/bb_city"
+                app:layout_constraintTop_toBottomOf="@id/district"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <CheckBox
+                android:id="@+id/availableInEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:hint="@string/i_am_available_in_case_of_emergency"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <CheckBox
+                android:id="@+id/conditionsAccepted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="I authrize this app and state that I am above 18 years old. I agree to display my details, so that Nearby could contact me."
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@null"
+                android:textSize="15sp"
+                android:gravity="clip_vertical"
+                android:drawablePadding="10dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/availableInEmergency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/spacing_16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textColor="#ffffff"
+                app:layout_constraintTop_toBottomOf="@id/conditionsAccepted"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+<!--            <EditText-->
+<!--                android:id="@+id/emailEditText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="@string/enter_email"-->
+<!--                />-->
+<!--            <EditText-->
+<!--                android:id="@+id/ageEditText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Enter Age"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="2"-->
+<!--                />-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/signOutBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="sign out"-->
+
+<!--                />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+</layout>

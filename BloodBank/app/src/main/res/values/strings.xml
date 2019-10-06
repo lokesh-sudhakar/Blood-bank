@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BloodBank</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="type_verification_code">Please Type the Verification Code Sent to</string>
+    <string name="enter_name">Name</string>
+    <string name="enter_email">Email</string>
+    <string name="registration">Blood Donor Registration</string>
+    <string name="phone_number">Phone number</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="state">State</string>
+    <string name="district">District</string>
+    <string name="city">City</string>
+    <string name="i_am_available_in_case_of_emergency">I am available in case of emergency</string>
+    <string name="register">Register</string>
+</resources>
